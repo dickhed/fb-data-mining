@@ -7,17 +7,17 @@ TITLE="**** Facebook Data Mining ****"
 
 # Functions
 
-# Michi
+# Michi / Aufgabe 7.1
 function data_preview {
   echo "Implement Data Preview"
 }
 
-# Rehan
+# Rehan / Aufgabe 7.2
 function state_count {
   echo "Implement Stati Count"
 }
 
-# Jan
+# Jan / Aufgabe 7.3
 function popular_post {
   echo "Implement Popular Post"
 }
