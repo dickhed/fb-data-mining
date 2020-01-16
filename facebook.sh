@@ -2,8 +2,7 @@
 
 # Variablen
 TITLE="**** Facebook Data Mining ****"
-
-
+FB_DATA="./facebook.csv"
 
 # Functions
 
@@ -19,7 +18,8 @@ function state_count {
 
 # Jan
 function popular_post {
-  echo "Implement Popular Post"
+  echo "Implement Popular Post Test"
+
 }
 
 # Der Array fuer das Menu
