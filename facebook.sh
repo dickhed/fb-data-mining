@@ -1,4 +1,17 @@
 #!/bin/bash
+#
+# -------------------------------------------------------------
+#
+# Title: statements about facebook posts based on a data set
+#
+# Requirements: awk, csvkit
+#
+# Autoren: Michael Bertschi, Jan Minder, Rehan Mirza
+# Version: 1.0
+# Datum: 23. Januar 2020
+#
+# -------------------------------------------------------------
+
 
 # Variablen
 TITLE="**** Facebook Data Mining ****"
@@ -18,15 +31,28 @@ function state_count {
 
 # Jan
 function popular_post {
-  echo "Implement Popular Post Test"
+
+    # calculates the Column 8 - 15 of each line with awk
+    # sorts the output from awk based on second column
+    # take the first result with head
+    # columns with wrong data (eg. a date) will be count as 0
+    printf "\nMost Popular Post from all Data:\n\n"
+    awk  -F "\"*,\"*" '{
+        printf "Likes: %d   |   Post: %s    |   ID: %s \n", int($8  + $9 + $11 + $12 + $13 + $14 + $15), $2, $1
+        }' $FB_DATA \
+    | sort -gk 2 -r \
+    | head -1
+    printf "\n"
 
 }
+
+# -- Menu -----------------------------------
 
 # Der Array fuer das Menu
 MENU=(
 "Datenpreview anzeigen"
-"Auswertung: Anzahl Stati pro Type"
-"Auswertung: Belibtester Eintrag"
+"Auswertung aller Stati pro Typ"
+"Belibtesten Eintrag anzeigen"
 "Ende"
 )
 
@@ -37,10 +63,14 @@ ANZAHL=${#MENU[*]}
 # Schlaufe fuer das Menue
 while true; do
   # Menu ausgeben
+  echo "---------------------------------"
   echo "$TITLE"
+  echo "---------------------------------"
+  printf "\n"
   for ((i=0; $i<$ANZAHL; i=$i+1)); do
     echo "$i) ${MENU[$i]}"
   done
+  printf "\n"
 
   # Eingabe verlangen und einlesen
   echo -n "Auswahl eingeben, mit ENTER bestaetigen: "
@@ -57,11 +87,11 @@ while true; do
     state_count
     ;;
   2) # dasselbe fuer die Antwort 2
-    echo -e "\n=> ${MENU[1]}\n"
+    echo -e "\n=> ${MENU[2]}\n"
     popular_post
     ;;
   3|[eE]|[qQ]) # regulaerer Ausdruck, behandelt sowohl 2 als auch e/E oder q/Q
-    echo -e "\n=> ${MENU[2]}\n"
+    echo -e "\n=> ${MENU[3]}\n"
     break # while Schleife beenden
     ;;
   *) # bei allen anderen Antworten kommt dieser Block zum Zug
