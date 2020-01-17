@@ -14,7 +14,9 @@ function data_preview {
 
 # Rehan / Aufgabe 7.2
 function state_count {
-  echo "Implement Stati Count"
+  # sql query to count every status_id of each status_type
+  # show the table of counted status_id's in each status_type
+  csvsql --query "select count() as status_id, status_type from facebook group by status_type" facebook.csv | csvlook
 }
 
 # Jan / Aufgabe 7.3
@@ -25,7 +27,7 @@ function popular_post {
 # Der Array fuer das Menu
 MENU=(
 "Datenpreview anzeigen"
-"Auswertung: Anzahl Stati pro Type"
+"Auswertung: Anzahl Status-ID's pro Status-Typ"
 "Auswertung: Belibtester Eintrag"
 "Ende"
 )
