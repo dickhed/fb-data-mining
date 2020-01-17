@@ -4,6 +4,8 @@
 
 run the script within a bash environment `./facebook.sh`
 
+![screenshot](data/screenshot.png)
+
 ## Methods
 
 | ID  | Funktion | Beschreibung |
@@ -26,3 +28,4 @@ run the script within a bash environment `./facebook.sh`
 | Voraussetzung | Die Datei facebook.csv ist vorhanden, kann aber nicht mit dem Delimeter `,` geparsed werden.|
 | Erwarteter Output | Fehlermeldung: Datei facebook.csv ist keine gültige CSV Datei |
 | Bestanden | Nein |
+
