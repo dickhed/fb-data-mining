@@ -13,7 +13,7 @@ run the script within a bash environment `./facebook.sh`
 | 2 | Belibtesten Eintrag anzeigen | Auflistung des beliebtesten Statuseintrags (Summe der Spalte 8 bis 15). |
 | 3 | Ende | Beendet das Script |
 
-## Testprotokoll
+## Testing Protocol
 
 | T-1 | Input Datei nicht vorhanden |
 |-----------------|:----------------------------------------------------------------------------|
