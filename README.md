@@ -1,5 +1,10 @@
 # Facebook Data Mining
 
+## Install dependencies
+
+* [csvkit](https://csvkit.readthedocs.io/en/latest/tutorial/1_getting_started.html#installing-csvkit)
+
+
 ## Usage
 
 run the script within a bash environment `./facebook.sh`

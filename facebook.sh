@@ -4,7 +4,7 @@
 #
 # Title: statements about facebook posts based on a data set
 #
-# Requirements: awk, csvkit
+# Requirements: awk, csvkit, csvsql, csvlook
 #
 # Autoren: Michael Bertschi, Jan Minder, Rehan Mirza
 # Version: 1.0
@@ -27,17 +27,19 @@ ERROR_COLOR="\033[31m" # red
 
 # Functions
 
-# Michi
+# Michi / Aufgabe 7.1
 function data_preview {
   echo "Implement Data Preview"
 }
 
-# Rehan
+# Rehan / Aufgabe 7.2
 function state_count {
-  echo "Implement Stati Count"
+  # sql query to count every status_id of each status_type
+  # show the table of counted status_id's in each status_type
+  csvsql --query "select count() as status_id, status_type from facebook group by status_type" $FB_DATA | csvlook
 }
 
-# Jan
+# Jan / Aufgabe 7.3
 function popular_post {
 
     # calculates the column 8 - 15 of each line with awk
@@ -67,7 +69,7 @@ MENU=(
 "Show data preview"
 "Count of state per type"
 "Show most popular post"
-"Ende"
+"End"
 )
 
 # Anzahl Elemente des Arrays MENU
