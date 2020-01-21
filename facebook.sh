@@ -29,7 +29,10 @@ ERROR_COLOR="\033[31m" # red
 
 # Michi / Aufgabe 7.1
 function data_preview {
-  echo "Implement Data Preview"
+ #Head - 10 Show us the first ten rows from the csv sheet.
+ #The csvlook show us an formated table and the max.column-width 
+ #is the max space of a column
+ head -10 $FB_DATA | csvlook --max.column-width 8
 }
 
 # Rehan / Aufgabe 7.2
