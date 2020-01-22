@@ -32,7 +32,7 @@ function data_preview {
  #Head - 10 Show us the first ten rows from the csv sheet.
  #The csvlook show us an formated table and the max.column-width 
  #is the max space of a column
- head -10 $FB_DATA | csvlook --max.column-width 8
+ head -10 $FB_DATA | csvlook --max-column-width 8
 }
 
 # Rehan / Aufgabe 7.2
