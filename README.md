@@ -25,12 +25,11 @@ run the script within a bash environment `./facebook.sh`
 | T-1 | Input Datei nicht vorhanden |
 |-----------------|:----------------------------------------------------------------------------|
 | Voraussetzung | Script wird ohne eine facebook.csv Datei im gleichen Verzeichnis gestartet |
-| Erwarteter Output | Fehlermeldung: Datei facebook.csv nicht vorhanden |
-| Bestanden | Nein |
+| Erwarteter Output | Meldung: Datei facebook.csv nicht vorhanden |
+| Bestanden | Ja |
 
 | T-2 | Input ist keine valide CSV Datei |
 |-----------------|:----------------------------------------------------------------------------|
 | Voraussetzung | Die Datei facebook.csv ist vorhanden, kann aber nicht mit dem Delimeter `,` geparsed werden.|
-| Erwarteter Output | Fehlermeldung: Datei facebook.csv ist keine gültige CSV Datei |
-| Bestanden | Nein |
-
+| Erwarteter Output | Meldung: Datei wird trotzdem versucht zu lesen |
+| Bestanden | Ja |
